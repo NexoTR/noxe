@@ -1,7 +1,7 @@
 //Main Const's
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const TOKEN = "NTQ1NjE0NDc3MjE1NjYyMTAw.D02JJg.OLbBaw1z60jtL6elASV-O_QK704";	
+const TOKEN = "nabacan";	
 const prefix = "n!";
 const fs = require('fs');
 bot.commands = new Discord.Collection();
