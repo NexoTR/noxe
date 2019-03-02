@@ -19,7 +19,6 @@ module.exports.run = async (bot, message, args) => {
 		.setTitle(":page_facing_up: **Yetkili Komutları**")
 		.setColor('#ff6523')
 		.addField("**n!sunucu**", "Sunucu Bilgilerini Gösterir.")
-		.addField("**n!**")
 
 		let help = new Discord.RichEmbed()
 		.setColor('#ff6523')
