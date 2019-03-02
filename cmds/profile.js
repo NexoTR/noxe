@@ -3,23 +3,26 @@ const moment = require('moment');
 
 module.exports.run = async (bot, message, args) => {
 
-    let ember = message.mentions.members.first() || message.member,
-     user = member.user;
-    const joinDiscord = moment(user.createdAt).format('llll');
-    const joinServer = moment(user.joinedAt).format('llll');
-    let embed = new Discord.RichEmbed()
-        .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL)
-        .setDescription(`${ember}`)
-        .setColor(`RANDOM`)
-        .setThumbnail(`${user.displayAvatarURL}`)
-        .addField('**:date: Katılım Tarihi**:', `${message.member.joinedAt}`)
-        .addField('**:red_circle: Durum**:', user.presence.status)
-        .addField('**:eight_pointed_black_star: Rolleri**', ember.roles.map(r => `${r}`).join(" | "))
-        .setFooter(`ID: ${user.id}`)
-        .setTimestamp();
-
-    message.channel.send({ embed: embed });
-    return;
+    let user;
+    if (message.mentions.user.first()) {
+        user = message.mentions.users.first();
+    } else {
+        user = message.author;
+    }
+    
+    const member = message.guild.member(user);
+    
+    const profile = new Discord.RichEmbed()
+    .setTitle("**" + `${user.username}` + "**" + " " + "#" + `${user.discriminator}`)
+    .setColor(`RANDOM`)
+    .setThumbnail(message.author.AvatarURL)
+    .addField("**Takma Adı**",``${member.nickname !== null ? `${member.nickname}` : : 'Yok')
+    .addField(":date: **Katılma Tarihi**",`${member.joinedAt}`)
+    .addField("**Bot**", `${user.bot}`)
+    .addField(":red_circle: **Durum**", `$user.presence.status}`)
+    .addField("**Oynuyor**",`${user.presence.game ? user.presence.game.name : 'Yok'}`)
+    .addField("**Rolleri**", `${member.roles.map(roles => `${roles.name}`).join(' | ')}`)c
+    message.channel.send({embed : profile});
 }
 
 module.exports.help = {
