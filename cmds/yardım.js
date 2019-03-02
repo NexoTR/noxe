@@ -5,11 +5,12 @@ module.exports.run = async (bot, message, args) => {
 		let help = new Discord.RichEmbed()
 		.setColor('#ff6523')
 		.setTitle(":page_facing_up: **Komutlar**")
-		.addField("**:new: n!profil [Etiket]**","Etiketlenen Kişinin Profilini Gösterir.")
+		.addBlankField()
+		.addField("**:new: - n!profil [Etiket]**","Etiketlenen Kişinin Profilini Gösterir.")
 		.addField("**n!avatar [Etiket]**","Etiketlenen Kişinin Avatarını Gösterir.")
 		.addField("**n!bot**","Bot Bilgilerini Gösterir.")
 		.addField("**n!kurucu**","Sunucu Kurucusunu Gösterir.")
-		return message.channel.send({ embed: help})
+		return message.member.send({ embed: help})
 	}
 	
 	
@@ -28,8 +29,8 @@ module.exports.run = async (bot, message, args) => {
 		.addField("**n!bot**","Bot Bilgilerini Gösterir.")
 		.addField("**n!kurucu**","Sunucu Kurucusunu Gösterir.")
 		
-	message.channel.send({ embed: staff})
-	message.channel.send({ embed: help})
+	message.member.send({ embed: staff})
+	message.member.send({ embed: help})
 	}
 }
 
