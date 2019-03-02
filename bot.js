@@ -32,7 +32,7 @@ bot.on("ready", ready => {
 
 	bot.user.setStatus('Online');
 	
-	bot.user.setGame('Sedatın Buradan Amk Piliç')
+	bot.user.setGame('n! | Noxe by Nexo')
 }); 
 
 //Command Main
