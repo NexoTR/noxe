@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("**" + `${user.username}` + "**" + " " + "#" + `${user.discriminator}` + " " + "**Profili**")
     .addField("**Takma Adı**", `${member.nickname !== null ? `${member.nickname}` : 'Yok'}`)
     .addField("**:date: Katılım Tarihi**",`${member.joinedAt}`)
-    .addField("**Rolleri**",`${member.roles.map(roles => `${roles}.name`).join(' | ')}`)
+    .addField("**Rolleri**",`${member.roles.map(roles => `${roles}`).join(' | ')}`)
     .addField("**Oynuyor**",`${user.presence.game ? user.presence.game.name : 'Yok'}`)
     .addField("**:red_circle: Durum**", `${user.presence.status}`)
     message.channel.send(profile)
