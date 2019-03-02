@@ -6,6 +6,8 @@ module.exports.run = async (bot, message, args) => {
 	.setColor('#ff6523')
 	.setTitle("**" + `${message.guild.name}` + "**" + " " + "Sunucu Bilgileri")
 	.setThumbnail(ic)
+	.addField(":calendar:**Kuruluş Tarihi**",message.guild.createdAt,true)
+	.addField(":satellite:**Sunucu Bölgesi**",message.guild.region,true)
 	message.channel.send(server)
 }
 
