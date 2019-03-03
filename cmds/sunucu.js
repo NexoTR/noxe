@@ -11,6 +11,7 @@ module.exports.run = async (bot, message, args) => {
 	.addField(":calendar:**Kuruluş Tarihi**",createserver)
 	.addField(":satellite:**Kanal Sayısı**",message.guild.channels.size)
 	.addField(":regional_indicator_r: ** Rol Sayısı**",message.guild.roles.size)
+	.addField("**Kullanıcı Sayısı**", `${guild.members.filter(member => !member.user.bot).size} Bot \n ${guild.members.filter(member => member.user.bot).size} İnsan`)
 	.setFooter("ID = " + message.guild.id + " | " + "Bölge = " + message.guild.region)
 	message.channel.send(server)
 }
