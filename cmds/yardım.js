@@ -1,35 +1,22 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args) => {
+	let first = args.join(" ")
 	if(!message.member.hasPermission("ADMINISTRATOR")){
 		let help = new Discord.RichEmbed()
 		.setColor('#ff6523')
-		.setTitle(":page_facing_up: **Komutlar**")
-		.addBlankField()
-		.addField("**n!profil [Etiket]**","Etiketlenen Kişinin Profilini Gösterir.")
-		.addField("**n!avatar [Etiket]**","Etiketlenen Kişinin Avatarını Gösterir.")
-		.addField("**n!bot**","Bot Bilgilerini Gösterir.")
-		.addField("**n!kurucu**","Sunucu Kurucusunu Gösterir.")
+		.addField("Kategoriler","• n!yardım bot = Bot Bilgileri \n •n!yardım yetkili = Yetkili Komutları \n •n!yardım ayarlar = Bot Ayarları")
 		return message.member.send({ embed: help})
+	if(first === "yardım"){
+	message.channel.send("helo")
+	}
 	}
 	
 	
 	if(message.member.hasPermission("ADMINISTRATOR")){
-		let staff = new Discord.RichEmbed()
-		.setTitle(":page_facing_up: **Yetkili Komutları**")
-		.setColor('#ff6523')
-		.addField("**:new: - n!sunucu**", "Sunucu Bilgilerini Gösterir.")
-
 		let help = new Discord.RichEmbed()
 		.setColor('#ff6523')
-		.setTitle(":page_facing_up: **Komutlar**")
-		.addBlankField()
-		.addField("**n!profil [Etiket]**","Etiketlenen Kişinin Profilini Gösterir.")
-		.addField("**n!avatar [Etiket]**","Etiketlenen Kişinin Avatarını Gösterir.")
-		.addField("**n!bot**","Bot Bilgilerini Gösterir.")
-		.addField("**n!kurucu**","Sunucu Kurucusunu Gösterir.")
-		
-	message.member.send({ embed: staff})
+		.addField("Kategoriler","• n!yardım bot = Bot Bilgileri \n •n!yardım yetkili = Yetkili Komutları \n •n!yardım ayarlar = Bot Ayarları")
 	message.member.send({ embed: help})
 	}
 }
