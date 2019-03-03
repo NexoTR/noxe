@@ -4,7 +4,6 @@ const bot = new Discord.Client();
 const TOKEN = "nabacan";	
 const prefix = "n!";
 const fs = require('fs');
-const weather = require('weather.js')
 bot.commands = new Discord.Collection();
 
 //Cmds File Reader
