@@ -30,7 +30,7 @@ bot.on("message", async message => {
 	if(message.content.startsWith(`${prefix}yardım`)){
 		message.channel.send("Aferin")
 	}
-	if(message.content.startsWith(`${prefix}yardım eglence`)){
+	if(message.content.startsWith(`${prefix}yardım` + " " + "eglence")){
 		message.channel.send("Aferim")
 	}
 });
