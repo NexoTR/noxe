@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 module.exports.run = async (bot, message, args) => {
 	if(!message.member.hasPermission("ADMINISTRATOR")){
 		var num = args.join(" ");
-		if (num.content === "eglence"){
+		if (!num){
 			message.channel.send("test")
 		}
 	}
