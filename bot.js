@@ -25,15 +25,6 @@ fs.readdir("./cmds/", (err, files) => {
 		bot.commands.set(props.help.name, props);
 	});
 });
-
-bot.on("message", async message => {
-	if(message.content.startsWith(`${prefix}yardım`)){
-		message.channel.send("Aferin")
-	}
-	if(message.content.startsWith(`${prefix}yardım` + " " + "eglence")){
-		message.channel.send("Aferim")
-	}
-});
 //Status 
 bot.on("ready", ready => {
 	console.log("Bot is working now...");
