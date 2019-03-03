@@ -8,9 +8,10 @@ module.exports.run = async (bot, message, args) => {
 	.setColor('#ff6523')
 	.setTitle("**" + `${message.guild.name}` + "**" + " " + "Sunucu Bilgileri")
 	.setThumbnail(ic)
-	.addField(":calendar:**Kuruluş Tarihi**",createserver,true)
-	.addField(":satellite:**Kanal Sayısı**",message.guild.channels.size,true)
-	.setFooter("**ID = **" + message.guild.id + " | " + "**Bölge = **" + message.guild.region)
+	.addField(":calendar:**Kuruluş Tarihi**",createserver)
+	.addField(":satellite:**Kanal Sayısı**",message.guild.channels.size)
+	.addField(":regional_indicator_r ** Rol Sayısı**",message.guild.roles.size)
+	.setFooter("ID = " + message.guild.id + " | " + "Bölge = " + message.guild.region)
 	message.channel.send(server)
 }
 
