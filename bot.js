@@ -4,6 +4,7 @@ const bot = new Discord.Client();
 const TOKEN = "nabacan";	
 const prefix = "n!";
 const fs = require('fs');
+const superagent = require('superagent');
 bot.commands = new Discord.Collection();
 
 //Cmds File Reader
